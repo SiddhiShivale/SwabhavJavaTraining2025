@@ -1,5 +1,0 @@
-INDEX VERSION 1.134+D:\SwabhavJavaTraining\.metadata\.plugins\org.eclipse.jdt.core
-794718460.index
-1865797976.index
-3125922956.index
-2941326654.index
