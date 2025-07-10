@@ -1,7 +1,18 @@
+# Compiled class files
 *.class
 bin/
+
+# Logs and temp files
 *.log
-.classpath
-.project
-.settings/
+
+# Eclipse workspace-level settings (ignore)
 .metadata/
+
+# IDE-specific files to ignore (optional)
+*.tmp
+*.swp
+*.bak
+
+# OS-specific junk
+.DS_Store
+Thumbs.db
