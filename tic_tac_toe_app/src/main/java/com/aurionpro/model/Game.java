@@ -4,46 +4,38 @@ public class Game {
 
 	private Board board;
 	private Player currentPlayer;
+	private Player playerX;
+	private Player playerO;
 	private boolean gameOver;
 	private char winner;
+
+	public Game(String player1Name, String player2Name) {
+		board = new Board();
+		playerX = new Player('X', player1Name);
+		playerO = new Player('O', player2Name);
+		currentPlayer = playerX;
+		gameOver = false;
+		winner = ' ';
+	}
 
 	public Player getCurrentPlayer() {
 		return currentPlayer;
 	}
 
-	public void setCurrentPlayer(Player currentPlayer) {
-		this.currentPlayer = currentPlayer;
-	}
-	
 	public char[][] getBoard() {
 		return board.getGrid();
 	}
 
-	public void setBoard(Board board) {
-		this.board = board;
-	}
-	
 	public boolean isGameOver() {
 		return gameOver;
-	}
-
-	public void setGameOver(boolean gameOver) {
-		this.gameOver = gameOver;
 	}
 
 	public char getWinner() {
 		return winner;
 	}
-	
-	public void setWinner(char winner) {
-		this.winner = winner;
-	}
 
-	public Game() {
-		board = new Board();
-		currentPlayer = new Player('X');
-		gameOver = false;
-		winner = ' ';
+	public String getWinnerName() {
+		return winner == 'X' ? playerX.getName() : playerO.getName();
 	}
 
 	public boolean makeMove(int row, int col) {
@@ -62,8 +54,7 @@ public class Game {
 		return true;
 	}
 
-	public void switchPlayer() {
-		currentPlayer = new Player(currentPlayer.getMark() == 'X' ? 'O' : 'X');
+	private void switchPlayer() {
+		currentPlayer = (currentPlayer == playerX) ? playerO : playerX;
 	}
-
 }

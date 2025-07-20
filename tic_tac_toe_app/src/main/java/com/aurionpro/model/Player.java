@@ -3,6 +3,7 @@ package com.aurionpro.model;
 public class Player {
 
 	private char mark;
+	public String name;
 	
 	public char getMark() {
 		return mark;
@@ -12,8 +13,17 @@ public class Player {
 		this.mark = mark;
 	}
 	
-	public Player(char mark) {
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Player(char mark, String name) {
 		this.mark = mark;
+		this.name = name;
 	}
 
 }
